@@ -16,5 +16,3 @@ export const cesta = {
   preco: 'R$ 40,00'
  }
 }
-
-// export default cesta
