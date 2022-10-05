@@ -1,16 +1,20 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Image, StyleSheet, Dimensions,Text, View } from 'react-native'
-import Texto from '../../../components/Texto'
-import logo from '../../../../assets/logo.png'
+import Texto from '../../../components/Texto';
+import logo from '../../../../assets/logo.png';
+import { CestaContext } from '../../../mocks/cesta';
 
 
 export default function Detalhes () {
 
+   const cestaContext = useContext(CestaContext)
+   const {cesta} = cestaContext
+   
  return <>
   <Texto style={estilos.nome}>Cesta de Verdauras</Texto>
   <View style={estilos.fazenda}>
   <Image source={logo} style={estilos.imagemFazenda} />
-  <Texto style={estilos.nomeFazenda}>Jenny Jack Farm</Texto>
+  <Texto style={estilos.nomeFazenda}>{cestaContext.detalhes.nomeFazenda}</Texto>
   </View>
   <Texto style={estilos.descricao}>Uma cesta com produtos 
   selecionados cuidadosamentew da fazenda diretamente para a sua cozinha</Texto>

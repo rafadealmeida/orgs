@@ -1,14 +1,20 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import { Image, StyleSheet,Dimensions } from 'react-native'
 import imagemTopo from '../../../../assets/topo.png'
 import Texto from '../../../components/Texto'
+import { CestaContext } from '../../../mocks/cesta'
 
 const width = Dimensions.get('screen').width
 
+
 export default function Topo() {
+    const cestaContext = useContext(CestaContext)
+    const {cesta} = cestaContext
+    
+ 
  return  <>
      <Image source={imagemTopo} style={estilos.imagemTopo} />
-     <Texto  style={estilos.titulo}>Detalhe do produtos</Texto>
+     <Texto  style={estilos.titulo}>{cestaContext.topo.titulo}</Texto>
      </> ;
 }
 

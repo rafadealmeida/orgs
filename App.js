@@ -2,6 +2,7 @@
 import { StyleSheet,StatusBar,SafeAreaView, View } from 'react-native';
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from "@expo-google-fonts/montserrat";
 import Cesta from './src/telas/cesta/cesta';
+import {CestaContext,cesta} from './src/mocks/cesta'
 
 export default function App() {
   const [fonteCarregada] = useFonts({
@@ -15,10 +16,13 @@ export default function App() {
 
 
   return (
+    <CestaContext.Provider value={cesta} >
+
     <SafeAreaView>
       <StatusBar/>
       <Cesta/>
     </SafeAreaView>
+    </CestaContext.Provider>
   );
 }
 
