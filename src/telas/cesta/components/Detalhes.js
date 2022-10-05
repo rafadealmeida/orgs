@@ -11,14 +11,13 @@ export default function Detalhes () {
    const {cesta} = cestaContext
    
  return <>
-  <Texto style={estilos.nome}>Cesta de Verdauras</Texto>
+  <Texto style={estilos.nome}>{cestaContext.detalhes.nome}</Texto>
   <View style={estilos.fazenda}>
-  <Image source={logo} style={estilos.imagemFazenda} />
+  <Image source={cestaContext.detalhes.logoFazenda} style={estilos.imagemFazenda} />
   <Texto style={estilos.nomeFazenda}>{cestaContext.detalhes.nomeFazenda}</Texto>
   </View>
-  <Texto style={estilos.descricao}>Uma cesta com produtos 
-  selecionados cuidadosamentew da fazenda diretamente para a sua cozinha</Texto>
-  <Texto style={estilos.preco}>R$ 40,00</Texto>
+  <Texto style={estilos.descricao}>{cestaContext.detalhes.descricao}</Texto>
+  <Texto style={estilos.preco}>{cestaContext.detalhes.preco}</Texto>
   </>
 
  
