@@ -36,7 +36,7 @@ export default function App() {
     
     <CestaContext.Provider value={cesta} >
       
-    <SafeAreaView onLayout={onLayoutRootView} >
+    <SafeAreaView onLayout={onLayoutRootView} style={{flex: 1}}>
       <StatusBar/>
       <Cesta/>
     </SafeAreaView>
